@@ -28,7 +28,3 @@ Note:
 1. Website not only supports these device widths like IPad(768px) and Smartphones (350 – 365px) but also supports all other device dimensions.
 2. Multiple UI manipulations for device-specific dimensions.
 3. Page-level CSS files are provided instead of maintaining a single external file.
-4. Used ARIA (Accessible Rich Internet Applications) tags wherever necessary to make the application accessible to users with disabilities who use assistive technologies (AT).
-5. UI rich.
-
-NUID 002704579
