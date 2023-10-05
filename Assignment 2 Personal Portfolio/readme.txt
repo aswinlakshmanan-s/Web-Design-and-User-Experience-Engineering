@@ -1,48 +1,34 @@
-Portfolio Website
-- This repository contains the source code for my personal portfolio website. The website showcases my projects, skills, and provides a way to get in touch with me.
+Tags used: 
+Header
+Footer
+Nav
+Input
+Form
+Img
+ul
+li
+a
 
-Sections
-Home
-- A brief introduction and welcome message.
+Instructions:
 
-Projects
-- Displaying a collection of my notable projects with descriptions and links.
+Created my portfolio website which contains 4 sections -> Home, Projects, Skills and Contact.
 
-Skills
-- A gallery showcasing images related to my skills and technologies I'm proficient in.
+Points covered in the application:
+Use an external CSS file
+Use of float/overflow property
+Use of column layout structure
+use of absolute/relative position whenever necessary.
+use of tel, mailto option for contact information 
+use of css selectors
+use of image gallery for skill section
+Use of html and  html5 elements throughout. 
+Website is completely responsive. (Supports all device widths)
 
-Contact
-- Provides options to contact me via email or phone.
+Note:
+1. Website not only supports these device widths like IPad(768px) and Smartphones (350 – 365px) but also supports all other device dimensions.
+2. Multiple UI manipulations for device-specific dimensions.
+3. Page-level CSS files are provided instead of maintaining a single external file.
+4. Used ARIA (Accessible Rich Internet Applications) tags wherever necessary to make the application accessible to users with disabilities who use assistive technologies (AT).
+5. UI rich.
 
-CSS Layout and Positioning
-- Utilized float and overflow properties for certain elements to achieve desired layout.
-
-- Incorporated a column-based layout structure for improved visual appeal and content organization.
-
-- Employed both absolute and relative positioning where necessary for precise element placement.
-
-Contact Information
-Phone: tel:your-phone-number
-Email: mailto:your-email@example.com
-
-
-Features :
-
-- External CSS File: All styles are organized in an external CSS file for better maintainability.
-
-- Float/Overflow Property: Used float and overflow properties where necessary for layout and content arrangement.
-
-- Column Layout Structure: Incorporated a column-based layout structure for improved visual appeal and content organization.
-
-- Positioning: Utilized both absolute and relative positioning for precise element placement.
-
-- Contact Information: Provided options to contact me via email or phone using tel and mailto options.
-
-- CSS Selectors: Employed various CSS selectors for styling and targeting specific elements.
-
-- Image Gallery for Skills: Implemented an image gallery to showcase my skills with visuals.
-
-- HTML5 Elements: Ensured the use of HTML5 elements throughout for semantic and modern web development practices.
-
-- Responsive Design: Utilized media queries to make the website fully responsive, supporting all device widths.
-
+NUID 002704579
