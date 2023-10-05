@@ -1,0 +1,154 @@
+body {
+        font-family: Arial, sans-serif;         
+        background-color: #91dcdc;      
+        margin: 0;
+        padding: 0;                              
+                                                
+                                                
+}
+
+.navbar {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+}
+ .navbar a {
+       color: white;
+       text-decoration: none;
+       margin: 0 10px;
+       font-size: 18px;
+}
+
+.left-column {
+    flex: 1;
+  }
+  
+  .left-column .title-tag {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .left-column .title-des {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  
+.about-me {
+    display: flex;
+    justify-content: space-between; /* Creates space between left and right columns */
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    overflow: auto; /* Handles content overflow */
+}
+
+.about-me img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 20px;
+    float: right; /* Floats the image to the right */
+}
+
+.about-me video {
+    max-width: 100%;
+    height: auto;
+    margin-left: 20px;
+    float: right; /* Floats the image to the right */
+}
+
+.about-me .left-column {
+    max-width: 600px;
+    margin-right: 20px;
+    text-align: left;
+    float: left; /* Floats the text to the left */
+}
+
+.contact-send-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.contact-send-btn:hover {
+    background-color: #555;
+}
+
+.menu-wrap {
+    display: none;
+}
+
+.menu {
+    display: none;
+}
+
+.container1 {
+    margin-right: auto;
+    margin-left: auto;
+	margin-top: 140px;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.footer-area{
+    height: 180px;;
+    list-style-type: none;
+    text-align: center;
+    padding: 90px;
+    font-weight: bold;
+  }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: table-header-group;
+    }
+
+    .menu-wrap {
+        display: block;
+    }
+
+    .menu {
+        text-align: center;
+        padding: 20px;
+        display: none;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+
+    .menu ul li a {
+        color: #333;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .menu ul li a:hover {
+        color: #555;
+    }
+}
+
+
+@media screen and (min-width: 350px) and (max-width: 365px) {
+    body {
+        font-size: 14px; /* Example: Adjusting font size for smaller screens */
+    }
+
+    .about-me {
+        flex-direction: column; /* Example: Stack elements vertically */
+    }
+
+    .about-me img {
+        margin-left: 0; /* Example: Adjusting margin for image */
+    }
+}
