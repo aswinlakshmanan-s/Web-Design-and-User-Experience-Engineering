@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Feedback</title>
+	<style>
+		label {
+			float: left;
+			width: 150px;
+		}
+
+		#container {
+			width: 700px;
+			margin: auto;
+			background-color: beige;
+		}
+
+		main {
+			padding: 50px;
+		}
+
+		#myTable {
+			border: 2px solid green;
+			border-collapse: collapse;
+			margin: 30px 30px 20px 40px;
+		}
+
+		#myTable td,
+		th {
+			border: 1px solid green;
+			padding: 5px;
+		}
+
+		#myTable th {
+			color: #fff;
+			background-color: #a7c942;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+
+		<main>
+			<h2>Feedback</h2>
+			<h3>Love something? Hate something? Let us know!</h3>
+			Note : Fields marked with an asterisk(*) are mandatory
+			<br><br>
+			<form id="myForm" method="post">
+				<label>Title*:</label>
+
+            <!-- creates radio button inputs for selecting the title. Each radio button has a unique id (miss, mr, mrs), 
+                a common name (title), a value (miss, mr, mrs), and is set as required.-->
+				<input type="radio" name="title" id="miss" value="miss" required="required" />Miss
+				<input type="radio" name="title" id="mr" value="mr" required="required" />Mr.
+				<input type="radio" name="title" id="mrs" value="mrs" required="required" />Mrs.
+				<br><br>
+
+                <!-- creates a text input field for entering the first name. -->
+				<label for="firstName">First Name*:</label>
+				<input type="text" name="firstName" id="firstName" placeholder="First Name" required="required" />
+				<br><br>
+
+                <!--This section creates a <div> element with the id error_firstName. 
+                    It's initially set to be hidden (display: none). If there's an error, it will be displayed in red text.-->
+				<div id="error_firstName" style="display: none;color: red">
+					Please enter valid first name. First name is wrong
+					<br><br>
+				</div>
+
+                <!--  creates a text input field for entering the last name. -->
+				<label for="lastName">Last Name*:</label>
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name" required="required" />
+				<br><br>
+
+                <!--This section creates a <div> element to catch the error specific to last name by displaying a message -->
+				<div id="error_lastName" style="display: none;color: red">
+					Please enter valid last name. Last name entered is wrong
+					<br><br>
+				</div>
+                
+                <!--  creates a text input field for entering the email id. -->
+				<label for="emailId">Email Id*:</label>
+				<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required="required" />
+				<br><br>
+
+               <!--This section creates a <div> element to catch the potential errors specific to email address by displaying a message -->
+				<div id="error_emailId" style="display: none;color: red">
+					Please enter valid email address. Email address is wrong
+					<br><br>
+				</div>
+
+                <!--  creates a text input field for entering the phone number. -->
+				<label for="phoneNumber">Phone Number*:</label>
+				<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required="required" />
+				<br><br>
+
+                <!--This section creates a <div> element to catch the potential errors specific to phone numbers by displaying a message -->
+				<div id="error_phoneNumber" style="display: none;color: red">
+					Please enter valid phone number. Phone number is wrong
+					<br><br>
+				</div>
+
+                <!--  creates a text input field for entering the street address 1. -->
+				<label for="streetAddress1">Street Address 1*:</label>
+				<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address"
+					required="required" />
+				<br><br>
+
+                <!--This section creates a <div> element to catch the potential errors specific to street address 1 by displaying a message -->
+				<div id="error_streetAddress1" style="display: none;color: red">
+					Please enter valid street address 1. Street address 1 is wrong
+					<br><br>
+				</div>
+
+                <!--  creates a text input field for entering the street address 2 and it is not a required input field. -->
+				<label for="streetAddress2">Street Address 2:</label>
+				<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+				<br><br>
+
+                <!--  creates a text input field for entering the city. -->
+				<label for="city">City*:</label>
+				<input type="text" name="city" id="city" placeholder="city" required="required" />
+				<br><br>
+
+                <!--This section creates a <div> element to catch the potential errors specific to city by displaying a message -->
+				<div id="error_city" style="display: none;color: red">
+					Please enter valid city. City is wrong
+					<br><br>
+				</div>
+
+               <!--  creates a text input field for entering the state. -->
+				<label for="state">State*:</label>
+				<input type="text" name="state" id="state" placeholder="state" required="required" />
+				<br><br>
+
+                <!--This section creates a <div> element to catch the potential errors specific to state by displaying a message -->
+				<div id="error_state" style="display: none;color: red">
+					Please enter valid state. State entered is wrong
+					<br><br>
+				</div>
+
+               <!--  creates a text input field for entering the zipcode. -->
+				<label for="zipcode">ZipCode*:</label>
+				<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" required="required" />
+				<br><br>
+
+                <!--This section creates a <div> element to catch the potential errors specific to zipcode by displaying a message -->
+				<div id="error_zipcode" style="display: none;color: red">
+					Please enter valid zipcode. Zipcode is wrong
+					<br><br>
+				</div>
+
+
+               <!--  creates a checkbox field for choosing the referral type. -->
+				<label>How did you hear:</label>
+				<input type="checkbox" name="source" value="facebook" /> Facebook
+				<input type="checkbox" name="source" value="google" /> Google
+				<input type="checkbox" name="source" value="yelp" /> Yelp
+				<br><br>
+
+               <!--  creates a dropdown for choosing the options available.
+            creates a <select> element, which represents a dropdown menu.
+            The name attribute is set to "drinksDropDown", which will be used as the key when the form is submitted.
+            The id attribute is also set to "drinksDropDown", which provides a unique identifier for this element.
+
+            The onchange attribute is set to "toggleDrinksCheckBox(this)". This means that when the selection in the dropdown changes, 
+            the JavaScript function toggleDrinksCheckBox will be called.
+            -->
+				<label for="drinksDropDown">Drinks*:</label>
+				<select name="drinksDropDown" id="drinksDropDown" onchange="toggleDrinksCheckBox(this)">
+					<option value="">*Select an option*</option>
+					<option value="Hot Black Tea">Hot Black Tea</option>
+					<option value="Cold Coffee">Cold Coffee</option>
+					<option value="Lemon Iced Tea">Lemon Iced Tea</option>
+					<option value="Expresso">Expresso</option>
+					<option value="Latte">Latte</option>
+				</select>
+				<br /><br />
+                <!-- when the dropdown value is selected, this additional field is displayed with checkbox value to be selected-->
+				<input type="checkbox" name="check" id="check" style="display: none"
+					onclick="toggleAdditionalCustomisationsField(this)" />
+				<div id="drinksText" style="display: inline"></div>
+				<br /><br />
+
+                <!-- Label for Additional customizations-->
+				<label for="textField" id="labelAdditionalCustomisations" style="display: none">Any Additional
+					Customisations*: </label>
+				<input type="text" name="textField" placeholder="Additional customisations" id="textField"
+					style="display: none" />
+				<br /><br />
+				<div id="error_textField" style="display: none; color: red">
+					Please fill the customisation details
+					<br />
+					<br />
+				</div>
+                <!--Label for comment section-->
+				<label for="comments">Comments*:</label>
+				<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"
+					required="required"></textarea>
+				<br><br>
+                <!--Catches the potential error comments-->
+				<div id="error_comments" style="display: none;color: red">
+					Please enter valid commenst. Comments are wrong
+					<br><br>
+				</div>
+
+				<input type="Submit">
+				<input type="Reset">
+				<br><br>
+			</form>
+
+		</main>
+	</div>
+	<br><br>
+    <!--Populating table to store the values of the input fields-->
+	<table id="myTable">
+		<tr>
+			<th>Title</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email Id</th>
+			<th>Phone</th>
+			<th>Street Address 1</th>
+			<th>Street Address 2</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Zip Code</th>
+			<th>Referral</th>
+			<th>Drink</th>
+			<th>Size</th>
+			<th>Additional Customisations</th>
+			<th>Comments</th>
+		</tr>
+	</table>
+
+	<script>
+		var form = document.getElementById("myForm");
+        //When the form is submitted, it will trigger the submitted function.
+		form.addEventListener("submit", submitted)
+
+        //Initially, they are all set to false, indicating that none of the fields have been validated yet.
+		var validFirstName = false;
+		var validLastName = false;
+		var validEmail = false;
+		var validPhone = false;
+		var validStreetAddress1 = false;
+		var validCity = false;
+		var validState = false;
+		var validZipcode = false;
+		var validComments = false;
+		var validAdditionalCustomisations = false;
+
+		var tableList;
+
+		// regex checks variables
+		var regExName = /^[a-zA-Z]+$/;
+		var regExEmail = /([\w\.]+)@northeastern.edu/;
+		var regExPhone = /\d{3}-?\d{3}-\d{4}$/;
+		var regExZip = /\d{5}$/;
+
+        //It listens for the "input" event, which is triggered when the user interacts with the input field (e.g., by typing or pasting text).When the "input" event occurs, it will call the validate function.
+
+		var firstName = document.getElementById("firstName");
+		firstName.addEventListener("input", validate);
+
+		var lastName = document.getElementById("lastName");
+		lastName.addEventListener("input", validate);
+
+		var emailId = document.getElementById("emailId");
+		emailId.addEventListener("input", validate);
+
+		var phoneNumber = document.getElementById("phoneNumber");
+		phoneNumber.addEventListener("input", validate);
+
+		var streetAddress1 = document.getElementById("streetAddress1");
+		streetAddress1.addEventListener("input", validate);
+
+		var city = document.getElementById("city");
+		city.addEventListener("input", validate);
+
+		var state = document.getElementById("state");
+		state.addEventListener("input", validate);
+
+		var zipcode = document.getElementById("zipcode");
+		zipcode.addEventListener("input", validate);
+
+		var comments = document.getElementById("comments");
+		comments.addEventListener("input", validate);
+
+		var textField = document.getElementById("textField");
+		textField.addEventListener("input", validate);
+
+		//we need to write a function for validate
+		function validate(e) {
+			var value = e.target.value;
+			var type = this.id;
+			var em = "error_" + type
+
+			switch (type) {
+				case "firstName":
+					if (!value.trim().match(regExName)) {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validFirstName = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validFirstName = true;
+					}
+					break;
+
+				case "lastName":
+					if (!value.trim().match(regExName)) {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validLastName = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validLastName = true;
+					}
+					break;
+
+				case "emailId":
+					if (!value.trim().match(regExEmail)) {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validEmail = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validEmail = true;
+					}
+					break;
+				case "phoneNumber":
+					if (!value.trim().match(regExPhone)) {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validPhone = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validPhone = true;
+					}
+					break;
+
+				case "streetAddress1":
+					if (value.trim() == "") {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validStreetAddress1 = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validStreetAddress1 = true;
+					}
+					break;
+				case "city":
+					if (!value.trim().match(regExName)) {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validCity = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validCity = true;
+					}
+					break;
+				case "state":
+					if (!value.trim().match(regExName)) {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validState = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validState = true;
+					}
+					break;
+				case "zipcode":
+					if (!value.trim().match(regExZip)) {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validZipcode = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validZipcode = true;
+					}
+					break;
+				case "comments":
+					if (value.trim() == "") {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validComments = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validComments = true;
+					}
+					break;
+				case "textField":
+					if (value.trim() == "") {
+						document.getElementById(em).style.display = "block";
+						this.style.border = "2px solid red";
+						validAdditionalCustomisations = false;
+					}
+					else {
+						document.getElementById(em).style.display = "none";
+						this.style.border = "";
+						validAdditionalCustomisations = true;
+					}
+					break;
+
+			}
+		}
+
+
+		function submitted(e) {
+			e.preventDefault();
+			var drinksDropDownValue = document.getElementById("drinksDropDown").value;
+			var checkbox = document.getElementById("check").checked;
+			if (validFirstName && validLastName && validEmail && validPhone && validStreetAddress1 && validCity && validState && validZipcode && validComments && (checkbox ? validAdditionalCustomisations : true)) {
+				if (drinksDropDownValue != "") {
+					alert("Data is saved succesfully")
+					tableList = e.target;
+					constructTableList();
+					resetForm();
+				}
+				else {
+					alert("Please select a drink");
+				}
+			}
+			else {
+				alert("Please enter proper data");
+			}
+		}
+
+		function resetForm() {
+			document.getElementById("myForm").reset();
+			document.getElementById("check").style.display = "none";
+			document.getElementById("drinksText").innerHTML = "";
+			document.getElementById("labelAdditionalCustomisations").style.display = "none";
+			document.getElementById("textField").style.display = "none";
+		}
+
+		function constructTableList() {
+			var table = document.getElementById("myTable");
+			var tr = document.createElement("tr");
+			var td = document.createElement("td");
+			var textNode;
+			for (let i = 0; i < tableList.length - 2; i++) {
+				td = document.createElement("td");
+				if (i == 0 || i == 1 || i == 2 || i == 12 || i == 13 || i == 14) {
+					if (tableList[i].checked) {
+						textNode = document.createTextNode(tableList[i].value);
+						td.appendChild(textNode);
+						tr.appendChild(td);
+					}
+				}
+				else if (i == 16) {
+					if (!tableList[i].checked) {
+						textNode = document.createTextNode("NA");
+						td.appendChild(textNode);
+						tr.appendChild(td);
+					}
+					else {
+						textNode = document.createTextNode(tableList[i].value);
+						td.appendChild(textNode);
+						tr.appendChild(td);
+					}
+				}
+				else if (i == 8 || i == 17) {
+					if (tableList[i].value == "") {
+						textNode = document.createTextNode("NA");
+						td.appendChild(textNode);
+						tr.appendChild(td);
+					}
+					else {
+						textNode = document.createTextNode(tableList[i].value);
+						td.appendChild(textNode);
+						tr.appendChild(td);
+					}
+				}
+				else {
+					textNode = document.createTextNode(tableList[i].value);
+					td.appendChild(textNode);
+					tr.appendChild(td);
+				}
+			}
+			table.appendChild(tr);
+		}
+
+		$(function () {
+			var requiredCheckboxes = $(":checkbox[required]");
+
+			requiredCheckboxes.change(function () {
+				if (requiredCheckboxes.is(":checked")) {
+					requiredCheckboxes.removeAttr("required");
+				} else {
+					requiredCheckboxes.attr("required", "required");
+				}
+			});
+		});
+
+		function toggleDrinksCheckBox(selectObject) {
+			if (selectObject.value == "") {
+				document.getElementById("check").style.display = "none";
+				document.getElementById("drinksText").innerHTML = "";
+			} else {
+				document.getElementById("check").style.display = "inline";
+				var selectedText = selectObject.value + " - Large ($1 extra)";
+				document.getElementById("check").value = selectedText;
+				document.getElementById("drinksText").innerHTML = selectedText;
+			}
+		}
+
+		function toggleAdditionalCustomisationsField(input) {
+            /**It sets the display style property of the elements with IDs "labelAdditionalCustomisations" and "textField" to "block", making them visible. 
+             * Additionally, it sets the required attribute of the text field to true, making it a required field.**/
+			if (input.checked) {
+				document.getElementById("labelAdditionalCustomisations").style.display = "block";
+				document.getElementById("textField").style.display = "block";
+				document.getElementById("textField").required = true;
+			} else {
+				document.getElementById("labelAdditionalCustomisations").style.display = "none";
+				document.getElementById("textField").style.display = "none";
+				document.getElementById("error_textField").style.display = "none";
+				document.getElementById("textField").required = false;
+				document.getElementById("textField").style.border = "";
+				document.getElementById("textField").value = "";
+			}
+		}
+
+	</script>
+
+</body>
+
+</html>
