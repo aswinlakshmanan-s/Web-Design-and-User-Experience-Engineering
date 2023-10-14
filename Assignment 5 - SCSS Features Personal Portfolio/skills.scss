@@ -1,0 +1,66 @@
+@import "style";
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.skill-images {
+    img {
+        width: 16%;
+        padding: 30px;
+        cursor: pointer;
+
+        &:hover {
+            +span {
+                display: block;
+                position: fixed;
+                top: 170px;
+                right: 0px;
+                text-align: center;
+
+                img {
+                    width: 40%;
+                }
+            }
+        }
+    }
+
+    span {
+        display: none;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .skill-images {
+        img {
+            &:hover {
+                +span {
+                    right: -80px;
+                    top: 200px;
+
+                    img {
+                        width: 25%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .skill-images {
+        width: 100%;
+
+        img {
+            width: 30%;
+
+            &:hover {
+                +span {
+                    display: none;
+                }
+            }
+        }
+    }
+}

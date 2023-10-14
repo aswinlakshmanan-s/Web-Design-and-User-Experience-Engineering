@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+@function add-numbers($first-number, $second-number) {
+    @return $first-number + $second-number
+}
+
+$primary-color: #05386b;
+$tertiary-color: #edf5e1;
+$overlay-color: rgba(255, 255, 255, 0.9);
+$mono-font: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+$menu-speed: 0.75s;
+$light-text-color: #444;
+$black-color: #000;
+$white-color: #fff;
+
+
+@mixin flex($percentage: 100%) {
+    display: flex;
+    width: $percentage;
+}
+
+@mixin liSpanBeforeAfter {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    top: 50%;
+    margin-top: -0.5px;
+    background: $black-color;
+}
+
+@mixin interpolation($editable, $val) {
+    border-#{$editable}: $val;
+}
+
+%placeholder1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+%placeholder2 {
+    text-decoration: none;
+}
+
+body {
+    @extend %placeholder1;
+}
+
+.nav-desk {
+    height: 10vh;
+    width: 95vw;
+    margin: auto;
+    margin-top: add-numbers(5px, 15px);
+
+    .nav-logo {
+        height: 100%;
+        float: left;
+    }
+}
+
+.nav-items {
+    ul {
+        li {
+            span {
+                a {
+                    @extend %placeholder2;
+                }
+            }
+        }
+    }
+}
+
+
+.title-tag {
+    text-align: left;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#title-img {
+    width: 30.5%;
+    margin: 60px 0 0 60px;
+}
+
+#left-column {
+    padding-left: 35px;
+    float: left;
+    width: 50%;
+}
+
+#logo {
+    margin-top: 5px;
+    height: 60%;
+}
+
+ul {
+    float: right;
+    list-style: none;
+    padding: 10px 0px;
+
+    li {
+        display: inline;
+        font-size: 16px;
+        letter-spacing: 0.1;
+        padding: 0px 15px;
+
+        span {
+            position: relative;
+            cursor: pointer;
+
+            &:before {
+                @include liSpanBeforeAfter;
+                left: -2.5px;
+            }
+
+            &:after {
+                @include liSpanBeforeAfter;
+                right: 2.5px;
+                background: $black-color;
+                transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            }
+
+            &:hover:before {
+                background: $black-color;
+                width: 100%;
+                transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            }
+
+            &:hover:after {
+                background: transparent;
+                width: 100%;
+                transition: 0s;
+            }
+        }
+    }
+}
+
+.menu-wrap {
+    position: fixed;
+    top: add-numbers(10px, 10px);
+    right: 20px;
+    z-index: 1;
+    display: none;
+
+    .toggler {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+
+        &:checked+.hamburger>div {
+            transform: rotate(135deg);
+        }
+    }
+
+
+#main-body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title-des {
+    font-size: 1.5rem;
+}
+
+.about-me {
+    margin-top: 60px;
+}
+
+.contact-send-btn {
+    padding: 10px 15px;
+    background: $primary-color;
+    color: white;
+    border: 2px solid $primary-color;
+    letter-spacing: 0.1;
+    transition: all 1s;
+    @include interpolation("radius", 10px);
+    cursor: pointer;
+
+    &:hover {
+        background: white;
+        color: $primary-color;
+        border: 2px solid $primary-color;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #left-column {
+        padding-left: 80px;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        float: left;
+        width: 50%;
+    }
+
+    #main-body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        display: table-header-group;
+    }
+
+    /* For mobile phones: */
+    .nav-items {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    #title-img {
+        width: 70%;
+        margin: 30px 0 0 30px;
+    }
+
+    #main-body {
+        background: url('images/education.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+    }
+
+    #left-column {
+        padding-left: 15px;
+        float: left;
+        width: 100%;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    .title-tag {
+        font-size: 1.5rem;
+    }
+
+    .title-des {
+        padding-right: 30px;
+        font-size: 1rem;
+    }
+
+
+    .about-me {
+        margin-top: 0px;
+    }
+
+    .menu ul li {
+        display: block !important;
+    }
+}
+}

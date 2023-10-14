@@ -1,0 +1,87 @@
+@import "style";
+
+.project-main {
+    @include flex;
+    @include interpolation("radius", 12px);
+    justify-content: space-between;
+    flex-direction: column;
+    border: 1px solid $tertiary-color;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+    background-color: $tertiary-color;
+    position: relative;
+    height: 93%;
+
+
+    &:hover {
+        transform: scale(1.06);
+        box-shadow: 20px 20px 50px grey;
+    }
+}
+
+.folder {
+    width: 25px;
+}
+
+.new-tab {
+    width: 25px;
+}
+
+header {
+    @include interpolation("color", #E2E8F0);
+    word-wrap: break-word;
+}
+.project-header-padding {
+    padding: 1rem;
+}
+
+.header-first-layer {
+    @include flex($percentage: 92%);
+    justify-content: space-between;
+}
+
+.project-title {
+    margin: 0px 0px 10px;
+    color: $primary-color;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.project-description {
+    color: black;
+    font-size: 1rem;
+    font-weight: 540;
+}
+
+.project-tech-list {
+    @include flex;
+    align-items: flex-end;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    list-style: none;
+    color: $primary-color;
+    float: none;
+    padding: none;
+}
+
+.projects {
+    @include flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.project-outer {
+    width: 400px;
+    margin-left: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+    .projects {
+        margin-top: 0px;
+    }
+
+    .project-outer {
+        margin-left: 0px;
+    }
+}

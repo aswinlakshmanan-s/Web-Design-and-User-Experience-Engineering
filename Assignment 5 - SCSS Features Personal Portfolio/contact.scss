@@ -1,0 +1,95 @@
+@import "style";
+
+.contact-title {
+    margin: 10px 0 0 0;
+    font-size: 3rem;
+}
+
+.contact-des {
+    margin: 0px;
+    letter-spacing: 0.2;
+    font-size: 1rem;
+
+    a {
+        @extend %placeholder2;
+        color: $primary-color;
+        transition: color 1s;
+    }
+}
+
+.input-container {
+    padding: 10px 0px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    height: calc(2.25rem + 2px);
+    width: 90%;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background: none;
+    border: none;
+    @include interpolation("bottom", 2px solid #444);
+    @include interpolation("radius", 0rem);
+    transition: all .5s ease-in-out;
+    outline: none;
+
+    &:focus {
+        outline: none;
+        @include interpolation("bottom", 2px solid $primary-color);
+        box-shadow: none;
+    }
+
+    &:hover {
+        background: whitesmoke;
+    }
+}
+
+.social_links {
+    display: inline;
+    color: $primary-color;
+}
+
+.main_social_links {
+    margin: 5px;
+    @extend %placeholder2;
+    position: relative;
+    top: 0;
+    transition: top ease 0.1s;
+
+    &:hover {
+        top: -5px;
+    }
+}
+
+.link_images {
+    width: 5%;
+}
+
+.contact-img {
+    width: 35%;
+    margin: 80px 0 0 50px;
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+@media only screen and (max-width: 768px) {
+
+    .link_images {
+        width: 10%;
+    }
+
+    #contact-right {
+        display: none;
+    }
+}

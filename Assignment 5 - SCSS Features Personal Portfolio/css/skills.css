@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-items ul li span a {
+  text-decoration: none;
+}
+
+.nav-desk {
+  height: 10vh;
+  width: 95vw;
+  margin: auto;
+  margin-top: 20px;
+}
+.nav-desk .nav-logo {
+  height: 100%;
+  float: left;
+}
+
+.title-tag {
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#title-img {
+  width: 30.5%;
+  margin: 60px 0 0 60px;
+}
+
+#left-column {
+  padding-left: 35px;
+  float: left;
+  width: 50%;
+}
+
+#logo {
+  margin-top: 5px;
+  height: 60%;
+}
+
+ul {
+  float: right;
+  list-style: none;
+  padding: 10px 0px;
+}
+ul li {
+  display: inline;
+  font-size: 16px;
+  letter-spacing: 0.1;
+  padding: 0px 15px;
+}
+ul li span {
+  position: relative;
+  cursor: pointer;
+}
+ul li span:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #000;
+  left: -2.5px;
+}
+ul li span:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #000;
+  right: 2.5px;
+  background: #000;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+ul li span:hover:before {
+  background: #000;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+ul li span:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
+.menu-wrap {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  display: none;
+  /* Tablets */
+}
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+.menu-wrap #main-body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.menu-wrap .title-des {
+  font-size: 1.5rem;
+}
+.menu-wrap .about-me {
+  margin-top: 60px;
+}
+.menu-wrap .contact-send-btn {
+  padding: 10px 15px;
+  background: #05386b;
+  color: white;
+  border: 2px solid #05386b;
+  letter-spacing: 0.1;
+  transition: all 1s;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.menu-wrap .contact-send-btn:hover {
+  background: white;
+  color: #05386b;
+  border: 2px solid #05386b;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menu-wrap #left-column {
+    padding-left: 80px;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    float: left;
+    width: 50%;
+  }
+  .menu-wrap #main-body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .menu-wrap {
+    /* For mobile phones: */
+  }
+  .menu-wrap .navbar {
+    display: table-header-group;
+  }
+  .menu-wrap .nav-items {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  .menu-wrap #title-img {
+    width: 70%;
+    margin: 30px 0 0 30px;
+  }
+  .menu-wrap #main-body {
+    background: url("images/education.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+  }
+  .menu-wrap #left-column {
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+  .menu-wrap #logo {
+    display: none;
+  }
+  .menu-wrap .title-tag {
+    font-size: 1.5rem;
+  }
+  .menu-wrap .title-des {
+    padding-right: 30px;
+    font-size: 1rem;
+  }
+  .menu-wrap .about-me {
+    margin-top: 0px;
+  }
+  .menu-wrap .menu ul li {
+    display: block !important;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.skill-images img {
+  width: 16%;
+  padding: 30px;
+  cursor: pointer;
+}
+.skill-images img:hover + span {
+  display: block;
+  position: fixed;
+  top: 170px;
+  right: 0px;
+  text-align: center;
+}
+.skill-images img:hover + span img {
+  width: 40%;
+}
+.skill-images span {
+  display: none;
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .skill-images img:hover + span {
+    right: -80px;
+    top: 200px;
+  }
+  .skill-images img:hover + span img {
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .skill-images {
+    width: 100%;
+  }
+  .skill-images img {
+    width: 30%;
+  }
+  .skill-images img:hover + span {
+    display: none;
+  }
+}/*# sourceMappingURL=skills.css.map */
