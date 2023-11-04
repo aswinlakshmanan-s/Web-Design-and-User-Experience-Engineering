@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: #e5fbe5">
+    <div style="margin-top: 110px;">
+        <div class="queries">
+            <form onsubmit="return submitted();" method="GET" action="./calculator.html" id="myform">
+                <h2 style="text-align: center">Calculator Login</h2>
+
+                <label for="emailId">Email Id*:</label>
+                <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required="required" />
+                <br>
+
+                <div id="error_emailId" style="display: none;color: red">
+                    Please enter valid email address. Email address is wrong
+                    <br><br>
+                </div>
+
+                <label for="userName">User Name*:</label>
+                <input type="text" name="userName" id="userName" placeholder="Please enter your user name"
+                    required="required" />
+                <br>
+                <div id="error_userName" style="display: none;color: red">
+                    Please enter valid User Name. User Name is wrong
+                    <br><br>
+                </div>
+
+                <label for="password">Password*:</label>
+                <input type="password" name="password" id="password" placeholder="Please enter your password"
+                    required="required" />
+                <br>
+
+                <div id="error_password" style="display: none;color: red">
+                    Please enter valid password. Password is wrong
+                </div>
+
+                <input type="submit" id="submit" />
+            </form>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

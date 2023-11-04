@@ -1,0 +1,42 @@
+.stopWatchDiv {
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 100px auto 0;
+    width: fit-content;
+    padding: 10px 20px;
+    box-shadow: 1px 0px 4px 2px #9c9a9a;
+    border-radius: 5px;
+  }
+   
+  #stopwatch {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 60px;
+  }
+   
+  #btn-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+   
+  #btn-container button {
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background-color:#000;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 0 10px;
+    padding: 3px 8px;
+  }

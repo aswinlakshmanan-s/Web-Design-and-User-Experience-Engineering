@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body style="background-color: #f3fbe5">
+    <div class="calculatorDiv">
+        <h2 style="text-align: center">Calculator</h2>
+        <h3 style="text-align: center">Username: <span id="userName"></span></h3>
+
+        <div style="margin-left: 10%">
+            <label for="num1">Number 1 :</label>
+            <input name="num1" id="num1" type="text" placeholder="Please enter a number" /><br /><br />
+            <label for="num2">Number 2 :</label>
+            <input name="num2" id="num2" type="text" placeholder="Please enter a number" /><br /><br />
+            <label for="num2" style="margin-left: 20px;">Output :</label>
+            <input type="text" value="" placeholder="Output" id="total" readonly /><br /><br />
+
+            <span style="color: red" class="error">Please enter valid numbers</span><br /><br />
+
+            <button id="add" class="btn-click btn success">Add</button>
+            <button id="subtract" class="btn-click btn success">Subtract</button>
+            <button id="multiply" class="btn-click btn success">Multiply</button>
+            <button id="divide" class="btn-click btn success">Divide</button><br /><br />
+        </div>
+    </div>
+
+    <script src="./calculator.js"></script>
+</body>
+
+</html>
