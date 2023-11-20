@@ -1,0 +1,71 @@
+body,
+html {
+    height: 100%;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    div.games-title {
+        box-shadow: none;
+    }
+}

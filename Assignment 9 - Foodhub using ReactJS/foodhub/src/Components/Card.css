@@ -1,0 +1,18 @@
+div.gallery {
+    margin: 40px;
+    float: left;
+    width: 250px;
+    cursor: pointer;
+}
+
+div.gallery:hover {
+    border-radius: 15px;
+    transform: scale(1.1);
+    box-shadow: 20px 20px 50px grey;
+}
+
+div.gallery img {
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+}
